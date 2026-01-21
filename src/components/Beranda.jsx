@@ -17,6 +17,8 @@ const Beranda = () => {
   }, []);
 
   return (
+    
+    <>
     <div className="relative h-screen w-full overflow-hidden">
       {/* Background Video */}
       <video
@@ -78,6 +80,8 @@ const Beranda = () => {
         </div>
       </div>
     </div>
+    <div  id="Link"></div>
+    </>
   );
 };
 

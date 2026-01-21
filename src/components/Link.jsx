@@ -42,7 +42,7 @@ const socialLinks = [
 
 export default function Link() {
   return (
-    <section className="mt-20" id="Link">
+    <section className="mt-20">
       <div className="container mx-auto px-4 max-w-5xl">
         {/* Header */}
         <div className="text-center mb-12">
