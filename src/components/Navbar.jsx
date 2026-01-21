@@ -5,7 +5,7 @@ export default function Nav() {
 
   return (
     <nav className="bg-[#084469] px-4 fixed top-0 left-0 w-full z-50">
-      <div className="max-w-5xl mx-auto flex items-center justify-between h-20">
+      <div className="max-w-5xl mx-auto flex items-center justify-center h-20">
         
         {/* Logo & Title */}
         <div className="flex items-center">
@@ -19,7 +19,7 @@ export default function Nav() {
             alt="Logo 2"
             className="w-14 h-14 p-1"
           />
-          <span className="text-white ml-2 leading-tight text-[12px] md:text-base font-semibold">
+          <span className="text-white text-center ml-2 leading-tight text-[12px] md:text-base font-semibold">
             Kementerian Imigrasi dan Pemasyarakatan
             <br />
             Kantor Imigrasi Takengon
@@ -27,13 +27,13 @@ export default function Nav() {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-8 text-white font-medium">
+        {/* <ul className="hidden md:flex gap-8 text-white font-medium">
           <li className="hover:text-gray-300 cursor-pointer">Beranda</li>
           <li className="hover:text-gray-300 cursor-pointer">Link</li>
-        </ul>
+        </ul> */}
 
         {/* Mobile Button */}
-        <button
+        {/* <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden text-white focus:outline-none"
         >
@@ -54,18 +54,18 @@ export default function Nav() {
               }
             />
           </svg>
-        </button>
+        </button> */}
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
+      {/* {isOpen && (
         <div className="md:hidden bg-[#084469] px-4 pb-4">
           <ul className="flex flex-col gap-4 text-white font-medium">
             <li className="hover:text-gray-300">Beranda</li>
             <li className="hover:text-gray-300">Link</li>
           </ul>
         </div>
-      )}
+      )} */}
     </nav>
   );
 }
