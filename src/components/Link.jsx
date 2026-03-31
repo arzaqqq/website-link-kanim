@@ -47,7 +47,7 @@ export default function Link() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold">
-            Informasi lebih lanjuti
+            Informasi lebih lanjut
           </h1>
           <p className="text-lg md:text-2xl mt-3 text-gray-600">
             Kunjungi & Ikuti kami
