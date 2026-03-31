@@ -12,19 +12,21 @@ export default function Nav() {
           <img
             src="/images/logo1.png"
             alt="Logo 1"
-            className="w-14 h-14 "
+            className="max-w-14 "
           />
           <img
             src="/images/logo2.png"
             alt="Logo 2"
-            className="w-13 h-13"
+            className="max-w-13 "
           />
           <span className="text-white text-center ml-2 leading-tight text-[12px] md:text-base font-semibold">
             Kementerian Imigrasi dan Pemasyarakatan
             <br />
-            Republik Indonesia
+            Kantor Wilayah Ditjenim Aceh
           </span>
         </div>
+
+        <div id="google_translate_element"></div>
 
         {/* Desktop Menu */}
         {/* <ul className="hidden md:flex gap-8 text-white font-medium">
