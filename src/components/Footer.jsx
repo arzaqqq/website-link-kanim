@@ -41,7 +41,7 @@ export default function Footer() {
 
         {/* Garis Bawah */}
         <div className="border-t border-blue-700 mt-8 pt-4 text-center text-sm text-blue-200">
-          Website Bio link Resmi Kantor Imigrasi Kelas III Non-TPI Takengon
+          Copyright © 2026 TIM TI Inteldakim Kantor Imigrasi Takengon 
         </div>
       </div>
     </footer>

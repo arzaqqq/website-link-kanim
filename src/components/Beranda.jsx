@@ -42,8 +42,8 @@ const Beranda = () => {
         </h1>
 
         <p className="text-lg md:text-2xl mt-4 max-w-3xl">
-          Website Link Bio Resmi  
-          Kantor Imigrasi Kelas III Non-TPI Takengon
+          Laman Resmi Link Bio   
+          Kantor Imigrasi Kelas III Non TPI Takengon
         </p>
 
         <div className="md:flex gap-6 mt-10">

@@ -12,17 +12,17 @@ export default function Nav() {
           <img
             src="/images/logo1.png"
             alt="Logo 1"
-            className="w-14 h-14 p-1"
+            className="w-14 h-14 "
           />
           <img
             src="/images/logo2.png"
             alt="Logo 2"
-            className="w-14 h-14 p-1"
+            className="w-13 h-13"
           />
           <span className="text-white text-center ml-2 leading-tight text-[12px] md:text-base font-semibold">
             Kementerian Imigrasi dan Pemasyarakatan
             <br />
-            Kantor Imigrasi Takengon
+            Republik Indonesia
           </span>
         </div>
 

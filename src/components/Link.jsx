@@ -3,7 +3,7 @@ import React from "react";
 const socialLinks = [
   {
     name: "Instagram",
-    description: "Kantor Imigrasi Takengon",
+    description: "Ikuti, Suka, Komen, Bagikan! 🔥",
     url: "https://www.instagram.com/imigrasi_takengon",
     image: "/images/instagram.png",
   },
@@ -47,10 +47,10 @@ export default function Link() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold">
-            Lebih Lanjut Tentang Kami
+            Informasi lebih lanjuti
           </h1>
           <p className="text-lg md:text-2xl mt-3 text-gray-600">
-            Berbagai sosial media yang dapat Anda kunjungi
+            Kunjungi & Ikuti kami
           </p>
         </div>
 
