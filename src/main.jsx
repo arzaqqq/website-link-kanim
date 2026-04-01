@@ -1,19 +1,25 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
 import App from './App.jsx'
-import Nav from './components/Navbar.jsx'
-import Beranda from './components/Beranda.jsx'
-import Link from './components/Link.jsx'
-import Footer from './components/Footer.jsx'
-import FloatingMusicPlayer from './components/FloatingMusicPlayer.jsx'
+import Faq from './pages/Faq.jsx'
+
+const router = createBrowserRouter([
+  {
+    path:"/",
+    element:<App/>
+  },
+  {
+    path:"/faq",
+    element:<Faq/>
+  },
+
+])
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-     <Nav/>
-     <Beranda/>
-     <Link/>
-     <Footer/>
-    <App />
-    <FloatingMusicPlayer/>
+      <RouterProvider router={router} />
   </StrictMode>,
 )

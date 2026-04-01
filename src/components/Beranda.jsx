@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 
 const videos = [
   "/video/video-kanim1.mp4",
@@ -55,12 +56,12 @@ const Beranda = () => {
             Hubungi Kami
           </a>
 
-         <a
-          href="#Link"
+         <Link
+          to="/faq"
           className="  group flex justify-center w-[300px] items-center gap-2 px-8 py-3 border border-white rounded-full 
                     text-white hover:bg-white hover:text-black transition mt-5 md:mt-0"
         >
-          Lebih Lanjut
+          FAQ
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-5 h-5 transition-transform mt-1"
@@ -75,7 +76,7 @@ const Beranda = () => {
               d="M19 9l-7 7-7-7"
             />
           </svg>
-        </a>
+        </Link>
 
         </div>
       </div>

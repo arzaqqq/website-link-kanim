@@ -1,6 +1,11 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
+import Nav from './components/Navbar.jsx'
+import Beranda from './components/Beranda.jsx'
+import Link from './components/LinkSosial.jsx'
+import Footer from './components/Footer.jsx'
+import FloatingMusicPlayer from './components/FloatingMusicPlayer.jsx'
+
 import './App.css'
 
 function App() {
@@ -8,8 +13,12 @@ function App() {
 
   return (
     <>
-
-      
+    <Nav/>
+     <Beranda/>
+     <Link/>
+     <Footer/>
+  
+    <FloatingMusicPlayer/>
     </>
   )
 }
