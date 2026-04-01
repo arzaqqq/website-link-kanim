@@ -62,7 +62,7 @@ const Beranda = () => {
                     text-white hover:bg-white hover:text-black transition mt-5 md:mt-0"
         >
           FAQ
-          <svg
+          {/* <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-5 h-5 transition-transform mt-1"
             fill="none"
@@ -75,7 +75,7 @@ const Beranda = () => {
               strokeLinejoin="round"
               d="M19 9l-7 7-7-7"
             />
-          </svg>
+          </svg> */}
         </Link>
 
         </div>

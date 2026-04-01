@@ -53,7 +53,7 @@ function Faq() {
               <div 
                 key={index}
                 className={`border rounded-lg overflow-hidden transition-all duration-600 cursor-pointer shadow-sm
-                  ${isActive ? 'bg-[#003366] border-[#003366]' : 'bg-white border-gray-200 hover:border-gray-300'}`}
+                  ${isActive ? 'bg-[#084469]  border-[#003366]' : 'bg-white border-gray-200 hover:border-gray-300'}`}
                 onClick={() => toggleFaq(index)}
               >
                 {/* Bagian Pertanyaan */}
