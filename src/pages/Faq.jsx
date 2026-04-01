@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Nav from '../components/Navbar.jsx';
 import Footer from '../components/Footer.jsx';
-import FloatingMusicPlayer from '../components/FloatingMusicPlayer.jsx';
 
 function Faq() {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -53,7 +52,7 @@ function Faq() {
             return (
               <div 
                 key={index}
-                className={`border rounded-lg overflow-hidden transition-all duration-300 cursor-pointer shadow-sm
+                className={`border rounded-lg overflow-hidden transition-all duration-600 cursor-pointer shadow-sm
                   ${isActive ? 'bg-[#003366] border-[#003366]' : 'bg-white border-gray-200 hover:border-gray-300'}`}
                 onClick={() => toggleFaq(index)}
               >
@@ -62,14 +61,14 @@ function Faq() {
                   <span className={`font-semibold text-lg ${isActive ? 'text-white' : 'text-gray-900'}`}>
                     {item.tanya}
                   </span>
-                  <span className={`text-xl transition-transform duration-300 ${isActive ? 'text-white rotate-180' : 'text-gray-400'}`}>
+                  <span className={`text-xl transition-transform duration-600 ${isActive ? 'text-white rotate-180' : 'text-gray-400'}`}>
                     {isActive ? '−' : '+'}
                   </span>
                 </div>
 
                 {/* Bagian Jawaban */}
                 <div 
-                  className={`transition-all duration-300 ease-in-out overflow-hidden
+                  className={`transition-all duration-600 ease-in-out overflow-hidden
                     ${isActive ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}
                 >
                   <div className={`p-5 pt-0 border-t border-white/10 leading-relaxed ${isActive ? 'text-gray-100' : 'text-gray-600'}`}>
@@ -81,7 +80,6 @@ function Faq() {
           })}
         </div>
       </div>
-      <FloatingMusicPlayer/>
       <Footer />
     </>
   );

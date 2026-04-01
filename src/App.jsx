@@ -18,7 +18,7 @@ function App() {
      <Link/>
      <Footer/>
   
-    <FloatingMusicPlayer/>
+    
     </>
   )
 }

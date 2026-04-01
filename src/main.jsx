@@ -2,6 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
+import FloatingMusicPlayer from './components/FloatingMusicPlayer.jsx'
+
 import App from './App.jsx'
 import Faq from './pages/Faq.jsx'
 
@@ -21,5 +23,6 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
       <RouterProvider router={router} />
+    <FloatingMusicPlayer/>
   </StrictMode>,
 )
