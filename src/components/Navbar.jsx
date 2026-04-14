@@ -12,17 +12,17 @@ export default function Nav() {
           <img
             src="/images/logo1.png"
             alt="Logo 1"
-            className="max-w-14 "
+            className="max-w-10 "
           />
           <img
             src="/images/logo2.png"
             alt="Logo 2"
-            className="max-w-13 "
+            className="max-w-10 "
           />
-          <span className="text-white text-center ml-2 leading-tight text-[12px] md:text-base font-semibold">
-            Kementerian Imigrasi dan Pemasyarakatan
+          <span className="text-white  ml-2 leading-tight text-[10px] md:text-base font-semibold">
+            Kantor Wilayah Direktorat Jenderal Imigrasi Aceh
             <br />
-            Kantor Wilayah Ditjenim Aceh
+            Kantor Imigrasi Kelas III Non TPI Takengon 
           </span>
         </div>
 
