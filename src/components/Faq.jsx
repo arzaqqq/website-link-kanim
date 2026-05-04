@@ -40,7 +40,7 @@ const FAQItem = ({ faq, isOpen, onToggle }) => {
       className={`mb-3 rounded-xl border transition ${
         isOpen
           ? 'bg-[#0b5481] border-[#0b5481]'
-          : 'bg-gray-50 border-gray-200'
+          : 'bg-gray-50 border-blue-900'
       }`}
     >
       {/* Question */}
@@ -103,7 +103,9 @@ const FAQ = () => {
   }, [searchTerm, activeCategory]);
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-12">
+   <>
+   
+   <div className="max-w-5xl mx-auto px-4 pt-12">
       {/* Header */}
       <div className="text-center mb-10">
         <h2 className="text-4xl font-extrabold text-gray-900 mb-2">FAQ</h2>
@@ -118,7 +120,7 @@ const FAQ = () => {
         <input
           type="text"
           placeholder="Cari pertanyaan..."
-          className="w-full pl-12 pr-4 py-4 border rounded-2xl focus:ring-2 focus:ring-blue-500 outline-none"
+          className="w-full pl-12 pr-4 py-4 border-2 border-blue-900 rounded-2xl focus:ring-2 focus:ring-blue-500 outline-none"
           onChange={(e) => {
             setSearchTerm(e.target.value);
             setOpenId(null);
@@ -127,7 +129,7 @@ const FAQ = () => {
       </div>
 
       {/* Filter */}
-      <div className="flex flex-wrap gap-2 mb-8">
+      {/* <div className="flex flex-wrap gap-2 mb-8">
         {categories.map(cat => (
           <button
             key={cat}
@@ -144,7 +146,7 @@ const FAQ = () => {
             {cat}
           </button>
         ))}
-      </div>
+      </div> */}
 
       {/* FAQ */}
       {filteredFaq.length > 0 ? (
@@ -164,6 +166,9 @@ const FAQ = () => {
         </div>
       )}
     </div>
+   </>
+    
+    
   );
 };
 
