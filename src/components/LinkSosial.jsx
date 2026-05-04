@@ -55,7 +55,7 @@ export default function Link() {
         </div>
 
         {/* Cards */}
-        <div className="flex grid md:grid-cols-2 gap-5">
+        <div className="flex grid md:grid-cols-2 gap-5" id="link">
           {socialLinks.map((item, index) => (
             <a
               key={index}

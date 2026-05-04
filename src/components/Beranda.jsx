@@ -56,12 +56,12 @@ const Beranda = () => {
             Hubungi Kami
           </a>
 
-         <Link
-          to="/faq"
+         <a
+          href="#link"
           className="  group flex justify-center w-[300px] items-center gap-2 px-8 py-3 border border-white rounded-full 
                     text-white hover:bg-white hover:text-black transition mt-5 md:mt-0"
         >
-          FAQ
+          Lebih Lanjut
           {/* <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-5 h-5 transition-transform mt-1"
@@ -76,7 +76,7 @@ const Beranda = () => {
               d="M19 9l-7 7-7-7"
             />
           </svg> */}
-        </Link>
+        </a>
 
         </div>
       </div>
