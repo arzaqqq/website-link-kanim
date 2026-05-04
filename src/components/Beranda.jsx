@@ -81,7 +81,7 @@ const Beranda = () => {
         </div>
       </div>
     </div>
-    <div  id="Link"></div>
+    
     </>
   );
 };

@@ -15,9 +15,12 @@ function App() {
   return (
     <>
     <Nav/>
+     <div className='bg-linear-to-b from-white to-blue-200'>
      <Beranda/>
-     <Link/>
+    <Link/>
      <Faq/>
+     </div>
+     
      <Footer/>
   
     
