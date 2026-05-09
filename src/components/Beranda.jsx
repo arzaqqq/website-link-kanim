@@ -80,6 +80,7 @@ const Beranda = () => {
 
         </div>
       </div>
+      <div className="" id="link"></div>
     </div>
     
     </>

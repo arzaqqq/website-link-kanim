@@ -42,10 +42,10 @@ const socialLinks = [
 
 export default function Link() {
   return (
-    <section className="mt-20">
+    <section className="mt-20" id="link">
       <div className="container mx-auto px-4 max-w-5xl">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" >
           <h1 className="text-4xl md:text-5xl font-bold">
             Informasi lebih lanjut
           </h1>
@@ -55,14 +55,14 @@ export default function Link() {
         </div>
 
         {/* Cards */}
-        <div className="flex grid md:grid-cols-2 gap-5" id="link">
+        <div className="flex grid md:grid-cols-2 gap-5">
           {socialLinks.map((item, index) => (
             <a
               key={index}
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-4 p-4 border border-b-5 border-[#084469] rounded-2xl
+              className="group flex items-center gap-4 p-4  border-b-5 border-[#084469] rounded-2xl
                          hover:shadow-lg transition bg-white"
             >
               {/* Icon / Image */}

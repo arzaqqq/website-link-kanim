@@ -40,7 +40,7 @@ const FAQItem = ({ faq, isOpen, onToggle }) => {
       className={`mb-4 rounded-2xl border transition-all duration-300 ${
         isOpen
           ? 'bg-[#0b5481] border-[#0b5481] shadow-lg scale-[1.01]'
-          : 'bg-white border-blue-100 hover:shadow-md'
+          : 'bg-white  hover:shadow-md border-b-3 border-[#084469]'
       }`}
     >
       {/* Question */}
@@ -105,14 +105,14 @@ const FAQ = () => {
           <h2 className="text-4xl font-extrabold text-gray-900 mb-2">
             FAQ
           </h2>
-          <p className="text-gray-500">
+          <p className="text-lg md:text-2xl text-gray-500">
             Pertanyaan dan Jawaban Layanan Keimigrasian
           </p>
         </div>
 
         {/* HIGHLIGHT BOX */}
         <div className="max-w-3xl mx-auto mb-10">
-          <div className="bg-white shadow-md border border-blue-100 rounded-2xl p-6 text-center">
+          <div className="bg-white shadow-lg  border-b-5 border-[#084469] rounded-2xl p-6 text-center ">
             <h3 className="text-lg font-bold text-[#0b5481] mb-2">
               Butuh Bantuan?
             </h3>

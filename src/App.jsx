@@ -20,7 +20,6 @@ function App() {
     <Link/>
      <Faq/>
      </div>
-     
      <Footer/>
   
     
@@ -29,3 +28,4 @@ function App() {
 }
 
 export default App
+
