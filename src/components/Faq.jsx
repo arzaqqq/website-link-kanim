@@ -306,7 +306,7 @@ const FAQ = () => {
 
         {/* INFO BOX */}
         <div className="max-w-3xl mx-auto mb-10">
-          <div className="bg-white shadow-lg border-b-[5px] border-[#084469] rounded-2xl p-6 text-center">
+          <div className="bg-white shadow-lg border-b-[5px] border-blue-700 rounded-2xl p-6 text-center">
             <h3 className="text-lg font-bold text-[#0b5481] mb-2">
               Butuh Bantuan?
             </h3>
@@ -330,23 +330,23 @@ const FAQ = () => {
               setSearchTerm(e.target.value);
               setOpenId(null);
             }}
-            className="w-full pl-12 pr-4 py-4 border-2 border-blue-500 rounded-2xl shadow-sm focus:ring-2 focus:ring-[#0b5481] outline-none bg-white"
+            className="w-full pl-12 pr-4 py-4 border-2 border-blue-700 rounded-2xl shadow-sm focus:ring-2 focus:ring-[#0b5481] outline-none bg-white"
           />
         </div>
 
         {/* CATEGORY FILTER */}
-        <div className="flex flex-wrap gap-3 mb-8">
+        <div className="flex gap-3 mb-8 overflow-x-auto scrollbar-hide pb-2">
           {categories.map(category => (
-            <button
+           <button
               key={category}
               onClick={() => {
                 setActiveCategory(category);
                 setOpenId(null);
               }}
-              className={`px-4 py-2 rounded-full  text-sm font-medium transition-all duration-300 ${
+              className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 activeCategory === category
                   ? 'bg-[#0b5481] text-white shadow-md'
-                  : 'bg-white border-2 border-blue-500 text-gray-600 hover:border-[#0b5481]'
+                  : 'bg-white border border-gray-300 text-gray-600 hover:border-[#0b5481]'
               }`}
             >
               {category}
