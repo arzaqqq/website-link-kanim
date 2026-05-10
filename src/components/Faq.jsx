@@ -104,7 +104,7 @@ const faqData = [
     '- Pemegang Visa Kunjungan\n- Pemegang Visa on Arrival (VoA)\n- Pengguna Bebas Visa Kunjungan\n- Awak alat angkut\n- Orang asing dalam keadaan darurat\n- Anak yang lahir di Indonesia dari orang tua pemegang ITK',
 },
 {
-  id: 10,
+  id: 12,
   category: 'Paspor RI',
   question:
     'Apa saja tahapan pembuatan paspor di Kantor Imigrasi?',
@@ -117,7 +117,7 @@ const faqData = [
 },
 
 {
-  id: 11,
+  id: 13,
   category: 'Biaya & Pembayaran',
   question:
     'Di mana dan bagaimana cara membayar biaya paspor?',
@@ -126,7 +126,7 @@ const faqData = [
 },
 
 {
-  id: 12,
+  id: 14,
   category: 'Paspor RI',
   question:
     'Apakah paspor bisa berlaku hingga 10 tahun?',
@@ -135,7 +135,7 @@ const faqData = [
 },
 
 {
-  id: 13,
+  id: 15,
   category: 'Paspor RI',
   question:
     'Apakah pengajuan paspor wajib menggunakan aplikasi M-Paspor?',
@@ -144,7 +144,7 @@ const faqData = [
 },
 
 {
-  id: 14,
+  id: 16,
   category: 'Visa & Izin Tinggal',
   question: 'Apakah Visa on Arrival (VoA) bisa diperpanjang?',
   answer:
@@ -152,7 +152,7 @@ const faqData = [
 },
 
 {
-  id: 15,
+  id: 17,
   category: 'Visa & Izin Tinggal',
   question: 'Berapa lama masa berlaku Visa on Arrival (VoA)?',
   answer:
@@ -160,7 +160,7 @@ const faqData = [
 },
 
 {
-  id: 16,
+  id: 18,
   category: 'Visa & Izin Tinggal',
   question: 'Berapa lama masa tinggal Visa Kunjungan Satu Kali Perjalanan?',
   answer:
@@ -168,7 +168,7 @@ const faqData = [
 },
 
 {
-  id: 17,
+  id: 19,
   category: 'Visa & Izin Tinggal',
   question: 'Apa syarat dokumen untuk perpanjangan ITK?',
   answer:
@@ -176,7 +176,7 @@ const faqData = [
 },
 
 {
-  id: 18,
+  id: 20,
   category: 'Visa & Izin Tinggal',
   question: 'Kapan pengajuan perpanjangan ITK dapat dilakukan?',
   answer:
@@ -184,7 +184,7 @@ const faqData = [
 },
 
 {
-  id: 19,
+  id: 21,
   category: 'Visa & Izin Tinggal',
   question: 'Berapa lama proses perpanjangan Izin Tinggal Kunjungan?',
   answer:
@@ -192,7 +192,7 @@ const faqData = [
 },
 
 {
-  id: 20,
+  id: 22,
   category: 'Visa & Izin Tinggal',
   question: 'Berapa biaya resmi perpanjangan ITK?',
   answer:
@@ -200,7 +200,7 @@ const faqData = [
 },
 
 {
-  id: 21,
+  id: 23,
   category: 'Visa & Izin Tinggal',
   question: 'Apakah pemohon dianggap overstay jika pembayaran dilakukan sebelum ITK berakhir?',
   answer:
