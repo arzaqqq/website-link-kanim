@@ -44,7 +44,6 @@ export default function Link() {
   return (
     <section className="mt-20" id="link">
       <div className="container mx-auto px-4 max-w-5xl">
-        {/* Header */}
         {/* HEADER */}
 <div className="relative text-center mb-14 overflow-hidden">
 
@@ -77,12 +76,12 @@ export default function Link() {
     </h1>
 
     {/* LINE */}
-    <div className="w-28 h-1 bg-gradient-to-r from-[#0b5481] to-cyan-400 rounded-full mx-auto mt-5 mb-4" />
+    <div className="w-28 h-1  from-[#0b5481] to-cyan-400 rounded-full mx-auto mt-5 mb-4" />
 
     {/* SUBTITLE */}
     <p className="text-md md:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
       Kunjungi dan ikuti media informasi resmi untuk mendapatkan
-      layanan dan pembaruan terbaru seputar keimigrasian.
+      informasi terbaru seputar keimigrasian.
     </p>
   </div>
 </div>
