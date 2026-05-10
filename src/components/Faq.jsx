@@ -211,7 +211,7 @@ const faqData = [
 const FAQItem = ({ faq, isOpen, onToggle }) => {
   return (
     <div
-      className={`mb-4 rounded-2xl border transition-all duration-300 ${
+      className={`mb-4 rounded-2xl border transition-all duration-300  ${
         isOpen
           ? 'bg-[#0b5481] border-[#0b5481] shadow-lg scale-[1.01]'
           : 'bg-white hover:shadow-md border-b-[3px] border-[#084469]'
@@ -220,7 +220,7 @@ const FAQItem = ({ faq, isOpen, onToggle }) => {
       {/* QUESTION */}
       <button
         onClick={onToggle}
-        className="w-full flex justify-between items-center gap-4 p-5 text-left"
+        className="w-full flex justify-between items-center gap-4 p-5 text-left hover:cursor-pointer"
       >
         <span
           className={`font-semibold text-sm md:text-base ${
