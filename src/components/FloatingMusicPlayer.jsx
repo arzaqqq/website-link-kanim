@@ -1,21 +1,33 @@
 import { useState, useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 export default function FloatingMusicPlayer() {
   const audioRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(1); // Volume dari 0.0 sampai 1.0
 
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [volume, setVolume] = useState(1);
+
+  // POSISI FLOATING
+  const [position, setPosition] = useState(() => {
+    const saved = localStorage.getItem('music-position');
+    return saved
+      ? JSON.parse(saved)
+      : { x: window.innerWidth - 120, y: window.innerHeight - 140 };
+  });
+
+  // AUTOPLAY
   useEffect(() => {
-    // Mencoba memutar otomatis saat komponen dimuat (masuk halaman web)
     if (audioRef.current) {
-      audioRef.current.play()
+      audioRef.current.volume = volume;
+
+      audioRef.current
+        .play()
         .then(() => setIsPlaying(true))
-        .catch((err) => {
-          console.log("Autoplay dicegah oleh browser. Pengguna harus klik play.");
+        .catch(() => {
+          console.log('Autoplay diblok browser');
         });
     }
 
-    // Fungsi cleanup: mematikan musik saat keluar dari halaman web/komponen di-unmount
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
@@ -23,34 +35,45 @@ export default function FloatingMusicPlayer() {
     };
   }, []);
 
+  // SIMPAN POSISI
+  useEffect(() => {
+    localStorage.setItem('music-position', JSON.stringify(position));
+  }, [position]);
+
+  // PLAY / PAUSE
   const togglePlay = () => {
+    if (!audioRef.current) return;
+
     if (isPlaying) {
       audioRef.current.pause();
     } else {
       audioRef.current.play();
     }
+
     setIsPlaying(!isPlaying);
   };
 
+  // VOLUME
   const increaseVolume = () => {
-    if (audioRef.current && volume < 1) {
-      const newVolume = Math.min(volume + 0.1, 1);
-      audioRef.current.volume = newVolume;
-      setVolume(newVolume);
-    }
+    if (!audioRef.current) return;
+
+    const newVolume = Math.min(volume + 0.1, 1);
+
+    audioRef.current.volume = newVolume;
+    setVolume(newVolume);
   };
 
   const decreaseVolume = () => {
-    if (audioRef.current && volume > 0) {
-      const newVolume = Math.max(volume - 0.1, 0);
-      audioRef.current.volume = newVolume;
-      setVolume(newVolume);
-    }
+    if (!audioRef.current) return;
+
+    const newVolume = Math.max(volume - 0.1, 0);
+
+    audioRef.current.volume = newVolume;
+    setVolume(newVolume);
   };
 
   return (
     <>
-      {/* Sisipkan keyframes CSS di sini agar tidak perlu file eksternal */}
       <style>
         {`
           @keyframes rotate {
@@ -61,105 +84,170 @@ export default function FloatingMusicPlayer() {
               transform: rotate(360deg);
             }
           }
+
+          @keyframes pulseGlow {
+            0% {
+              box-shadow: 0 0 0px rgba(11,84,129,0.4);
+            }
+            50% {
+              box-shadow: 0 0 25px rgba(11,84,129,0.9);
+            }
+            100% {
+              box-shadow: 0 0 0px rgba(11,84,129,0.4);
+            }
+          }
+
+          @keyframes equalizer {
+            0% { height: 6px; }
+            50% { height: 18px; }
+            100% { height: 6px; }
+          }
         `}
       </style>
-      <div style={styles.container}>
-        {/* Ganti src dengan lokasi gambar untuk lingkaran musik kamu */}
-        <img 
-          src="images/logo1.png" // Contoh gambar, taruh gambarmu di folder public
-          alt="Cover Musik" 
+
+      <motion.div
+        drag
+        dragMomentum={false}
+        whileTap={{ scale: 1.05 }}
+        onDragEnd={(event, info) => {
+          setPosition({
+            x: position.x + info.offset.x,
+            y: position.y + info.offset.y,
+          });
+        }}
+        initial={position}
+        animate={position}
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          zIndex: 9999,
+          width: '95px',
+          height: '95px',
+          borderRadius: '50%',
+          overflow: 'hidden',
+          cursor: 'grab',
+          backdropFilter: 'blur(12px)',
+          animation: isPlaying
+            ? 'pulseGlow 2s infinite'
+            : 'none',
+        }}
+      >
+        {/* COVER */}
+        <img
+          src="/images/logo1.png"
+          alt="Music Cover"
           style={{
-            ...styles.image,
-            // Terapkan animasi rotasi selalu, dan atur status jeda/jalan berdasarkan isPlaying
-            animation: 'rotate 10s linear infinite',
-            animationPlayState: isPlaying ? 'running' : 'paused'
-          }} 
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            animation: 'rotate 12s linear infinite',
+            animationPlayState: isPlaying
+              ? 'running'
+              : 'paused',
+          }}
         />
-        
-        {/* Overlay hitam transparan yang berisi tombol, sekarang SELALU terlihat dan lebih gelap */}
-        <div style={styles.overlay}>
-          <button onClick={togglePlay} style={styles.playButton}>
+
+        {/* OVERLAY */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'rgba(0,0,0,0.55)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: 'white',
+          }}
+        >
+          {/* PLAY BUTTON */}
+          <button
+            onClick={togglePlay}
+            style={{
+              border: 'none',
+              background: 'rgba(255,255,255,0.15)',
+              width: '30px',
+              height: '30px',
+              borderRadius: '50%',
+              color: 'white',
+              fontSize: '18px',
+              cursor: 'pointer',
+              backdropFilter: 'blur(10px)',
+            }}
+          >
             {isPlaying ? '⏸' : '▶'}
           </button>
-          
-          <div style={styles.volumeControls}>
-            <button onClick={decreaseVolume} style={styles.volButton}>-</button>
-            <span style={styles.volText}>Vol</span>
-            <button onClick={increaseVolume} style={styles.volButton}>+</button>
+
+          {/* EQUALIZER */}
+          {isPlaying && (
+            <div
+              style={{
+                display: 'flex',
+                gap: '3px',
+                marginTop: '8px',
+                alignItems: 'flex-end',
+                height: '20px',
+              }}
+            >
+              {[1, 2, 3, 4].map((bar) => (
+                <div
+                  key={bar}
+                  style={{
+                    width: '4px',
+                    background: 'white',
+                    borderRadius: '999px',
+                    animation: `equalizer ${
+                      0.5 + bar * 0.2
+                    }s infinite`,
+                  }}
+                />
+              ))}
+            </div>
+          )}
+
+          {/* VOLUME */}
+          <div
+            style={{
+              display: 'flex',
+              gap: '6px',
+              marginTop: '6px',
+            }}
+          >
+            <button
+              onClick={decreaseVolume}
+              style={volBtn}
+            >
+              -
+            </button>
+
+            <button
+              onClick={increaseVolume}
+              style={volBtn}
+            >
+              +
+            </button>
           </div>
         </div>
 
-        {/* File audio dari folder public/musik/ */}
-        <audio ref={audioRef} src="/musik/marsimigrasi.mp3" loop />
-      </div>
+        {/* AUDIO */}
+        <audio
+          ref={audioRef}
+          src="/musik/marsimigrasi.mp3"
+          loop
+        />
+      </motion.div>
     </>
   );
 }
 
-// Styling bawaan React agar bentuknya bulat, mengambang di kanan bawah, dan ada overlay permanen yang gelap
-const styles = {
-  container: {
-    position: 'fixed',
-    bottom: '20px',
-    right: '20px',
-    width: '90px',
-    height: '90px',
-    borderRadius: '50%',
-    overflow: 'hidden',
-    boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
-    zIndex: 9999,
-    cursor: 'pointer',
-  },
-  image: {
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover',
-  },
-  overlay: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.7)', // Lebih gelap (0.7 dari sebelumnya 0.5)
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    opacity: 1, // SELALU TERLIHAT JELAS
-    transition: 'opacity 0.3s ease',
-  },
-  playButton: {
-    background: 'none',
-    border: 'none',
-    color: 'white',
-    fontSize: '24px',
-    cursor: 'pointer',
-    margin: '0',
-    padding: '0',
-    fontWeight: 'bold', // Membuat simbol tombol lebih jelas
-  },
-  volumeControls: {
-    display: 'flex',
-    alignItems: 'center',
-    marginTop: '5px',
-    gap: '5px',
-  },
-  volButton: {
-    background: 'rgba(255,255,255,0.2)',
-    border: 'none',
-    color: 'white',
-    borderRadius: '50%',
-    width: '20px',
-    height: '20px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    cursor: 'pointer',
-    fontSize: '12px',
-  },
-  volText: {
-    color: 'white',
-    fontSize: '10px',
-  }
+const volBtn = {
+  width: '20px',
+  height: '20px',
+  borderRadius: '50%',
+  border: 'none',
+  background: 'rgba(255,255,255,0.2)',
+  color: 'white',
+  cursor: 'pointer',
+  fontSize: '12px',
 };
