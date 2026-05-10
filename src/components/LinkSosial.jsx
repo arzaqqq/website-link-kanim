@@ -55,14 +55,14 @@ export default function Link() {
   {/* TOP ORNAMENT */}
   <div className="flex justify-center mb-4">
     <div className="px-5 py-1 rounded-full border border-[#0b5481]/20 bg-[#0b5481]/5 backdrop-blur-sm">
-      <span className="text-sm tracking-widest text-[#0b5481] font-semibold uppercase">
+      <span className="text-[10px] md:text-sm tracking-widest text-[#0b5481] font-semibold uppercase">
         Kantor Imigrasi Kelas III Non TPI Takengon
       </span>
     </div>
   </div>
 
   {/* FRAME */}
-  <div className="relative inline-block px-8">
+  <div className="relative inline-block px-8 py-5">
 
     {/* KERAWANG GAYO ORNAMENT */}
     <div className="absolute top-0 left-0 w-14 h-14 border-l-4 border-t-4 border-[#0b5481]/70 rounded-tl-2xl" />
@@ -71,12 +71,12 @@ export default function Link() {
     <div className="absolute bottom-0 right-0 w-14 h-14 border-r-4 border-b-4 border-[#0b5481]/70 rounded-br-2xl" />
 
     {/* TITLE */}
-    <h1 className="text-3xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+    <h1 className="text-2xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
       Informasi Lebih Lanjut
     </h1>
 
     {/* LINE */}
-    <div className="w-28 h-1  from-[#0b5481] to-cyan-400 rounded-full mx-auto mt-5 mb-4" />
+    <div className="w-28 h-1  from-[#0b5481] to-cyan-400 rounded-full mx-auto mt-3 mb-3" />
 
     {/* SUBTITLE */}
     <p className="text-md md:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
