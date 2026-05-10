@@ -45,14 +45,47 @@ export default function Link() {
     <section className="mt-20" id="link">
       <div className="container mx-auto px-4 max-w-5xl">
         {/* Header */}
-        <div className="text-center mb-12" >
-          <h1 className="text-4xl md:text-5xl font-bold">
-            Informasi lebih lanjut
-          </h1>
-          <p className="text-lg md:text-2xl mt-3 text-gray-600">
-            Kunjungi & Ikuti kami
-          </p>
-        </div>
+        {/* HEADER */}
+<div className="relative text-center mb-14 overflow-hidden">
+
+  {/* BACKGROUND BLUR */}
+  <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
+    <div className="w-72 h-72 bg-[#0b5481]/10 blur-3xl rounded-full" />
+  </div>
+
+  {/* TOP ORNAMENT */}
+  <div className="flex justify-center mb-4">
+    <div className="px-5 py-1 rounded-full border border-[#0b5481]/20 bg-[#0b5481]/5 backdrop-blur-sm">
+      <span className="text-sm tracking-widest text-[#0b5481] font-semibold uppercase">
+        Kantor Imigrasi Kelas III Non TPI Takengon
+      </span>
+    </div>
+  </div>
+
+  {/* FRAME */}
+  <div className="relative inline-block px-8">
+
+    {/* KERAWANG GAYO ORNAMENT */}
+    <div className="absolute top-0 left-0 w-14 h-14 border-l-4 border-t-4 border-[#0b5481]/70 rounded-tl-2xl" />
+    <div className="absolute top-0 right-0 w-14 h-14 border-r-4 border-t-4 border-[#0b5481]/70 rounded-tr-2xl" />
+    <div className="absolute bottom-0 left-0 w-14 h-14 border-l-4 border-b-4 border-[#0b5481]/70 rounded-bl-2xl" />
+    <div className="absolute bottom-0 right-0 w-14 h-14 border-r-4 border-b-4 border-[#0b5481]/70 rounded-br-2xl" />
+
+    {/* TITLE */}
+    <h1 className="text-3xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+      Informasi Lebih Lanjut
+    </h1>
+
+    {/* LINE */}
+    <div className="w-28 h-1 bg-gradient-to-r from-[#0b5481] to-cyan-400 rounded-full mx-auto mt-5 mb-4" />
+
+    {/* SUBTITLE */}
+    <p className="text-md md:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+      Kunjungi dan ikuti media informasi resmi untuk mendapatkan
+      layanan dan pembaruan terbaru seputar keimigrasian.
+    </p>
+  </div>
+</div>
 
         {/* Cards */}
         <div className="flex grid md:grid-cols-2 gap-5">
