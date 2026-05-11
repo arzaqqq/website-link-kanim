@@ -52,14 +52,14 @@ export default function Footer() {
                 href="https://play.google.com/store/apps/details?id=id.go.imigrasi.paspor_online&hl=id&pli=1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group w-full sm:w-auto"
+                className="group w-auto sm:w-auto"
               >
                 <div className="flex items-center justify-center sm:justify-start rounded-xl transition-all duration-300 hover:scale-[1.03]">
 
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
                     alt="Download di Google Play"
-                    className="h-12 sm:h-14 md:h-16 w-auto object-contain"
+                    className="w-44 sm:h-14 md:h-16 sm:w-auto object-contain"
                   />
                 </div>
               </a>
@@ -69,14 +69,14 @@ export default function Footer() {
                 href="https://apps.apple.com/id/app/m-paspor/id1576336459"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group w-full sm:w-auto"
+                className="group w-auto sm:w-auto"
               >
                 <div className="flex items-center justify-center sm:justify-end rounded-xl transition-all duration-300 hover:scale-[1.03]">
 
                   <img
                     src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
                     alt="Download di App Store"
-                    className="h-12 sm:h-14 md:h-16 w-auto object-contain"
+                    className=" w-44 sm:h-14 md:h-16 sm:w-auto object-contain"
                   />
                 </div>
               </a>
