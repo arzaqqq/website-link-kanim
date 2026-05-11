@@ -223,7 +223,7 @@ const FAQItem = ({ faq, isOpen, onToggle }) => {
         className="w-full flex justify-between items-center gap-4 p-5 text-left hover:cursor-pointer"
       >
         <span
-          className={`font-semibold text-sm md:text-base ${
+          className={`font-semibold text-[16px] md:text-base ${
             isOpen ? 'text-white' : 'text-gray-800'
           }`}
         >
