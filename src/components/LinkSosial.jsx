@@ -3,12 +3,12 @@ import React from "react";
 const socialLinks = [
   {
     name: "Instagram",
-    description: "Ikuti, Suka, Komen, Bagikan! 🔥",
+    description: "Ikuti, Suka, Komen dan Bagikan! 🔥",
     url: "https://www.instagram.com/imigrasi_takengon",
-    image: "/images/instagram.png",
+    image: "/images/instagram_bulat.png",
   },
   {
-    name: "Tik Tok",
+    name: "TikTok",
     description: "Kantor Imigrasi Takengon",
     url: "https://www.tiktok.com/@imigrasi_takengon",
     image: "/images/tiktok.png",
@@ -20,19 +20,19 @@ const socialLinks = [
     image: "/images/facebook.png",
   },
   {
-    name: "youtube",
+    name: "Youtube",
     description: "Layanan Informasi & Pengaduan",
     url: "https://www.youtube.com/channel/UCLMa2pFfEK2irYHZ2NXMEJQ",
-    image: "/images/youtube.png",
+    image: "/images/youtube_bulat.png",
   },
   {
-    name: "Website Kementerian Imigrasi Takengon",
+    name: "Website",
     description: "Portal Layanan Keimigrasian",
     url: "https://takengon.imigrasi.go.id/",
     image: "/images/internet.png",
   },
   {
-  name: "Email Resmi Imigrasi Takengon",
+  name: "Email",
   description: "Untuk keperluan surat-menyurat dan informasi resmi",
   url: "mailto:imigrasi.takengon2@gmail.com",
   image: "/images/email.png",
@@ -101,7 +101,7 @@ export default function Link() {
               <img
                 src={item.image}
                 alt={item.name}
-                className="w-14 h-14 object-contain"
+                className="w-18  object-contain"
               />
 
               {/* Text */}
