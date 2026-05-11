@@ -29,7 +29,7 @@ const socialLinks = [
     name: "Website",
     description: "Portal Layanan Keimigrasian",
     url: "https://takengon.imigrasi.go.id/",
-    image: "/images/internet.png",
+    image: "/images/website_biru.png",
   },
   {
   name: "Email",
