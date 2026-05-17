@@ -7,13 +7,30 @@ export default function FloatingMusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(1);
 
-  // POSISI FLOATING
-  const [position, setPosition] = useState(() => {
-    const saved = localStorage.getItem('music-position');
-    return saved
-      ? JSON.parse(saved)
-      : { x: window.innerWidth - 120, y: window.innerHeight - 140 };
-  });
+  // POSISI DEFAULT
+  const defaultPosition = {
+    x: window.innerWidth - 120,
+    y: window.innerHeight - 140,
+  };
+
+  const [position, setPosition] = useState(defaultPosition);
+
+  // LOAD POSISI DARI LOCALSTORAGE
+  useEffect(() => {
+    const saved = localStorage.getItem("music-position");
+
+    if (saved) {
+      setPosition(JSON.parse(saved));
+    }
+  }, []);
+
+  // SIMPAN POSISI
+  useEffect(() => {
+    localStorage.setItem(
+      "music-position",
+      JSON.stringify(position)
+    );
+  }, [position]);
 
   // AUTOPLAY
   useEffect(() => {
